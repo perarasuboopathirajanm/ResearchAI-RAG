@@ -1,0 +1,120 @@
+/*
+ * ResearchAI - Neural RAG Research Assistant
+ * Copyright (c) 2026 Perarasu Boopathirajan. All rights reserved.
+ * Author: Perarasu Boopathirajan
+ * Unauthorized copying, redistribution or claiming authorship of this file,
+ * via any medium, is prohibited without written permission. See LICENSE.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neu-bg: #e8edf3;
+  --neu-light: #ffffff;
+  --neu-dark: #c5ccd8;
+  --neu-accent: #5b6cf9;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--neu-bg);
+  color: #3b4558;
+}
+
+/* ---------- Neumorphism primitives ---------- */
+.neu {
+  background: var(--neu-bg);
+  border-radius: 24px;
+  box-shadow: 10px 10px 22px var(--neu-dark), -10px -10px 22px var(--neu-light);
+}
+
+.neu-sm {
+  background: var(--neu-bg);
+  border-radius: 16px;
+  box-shadow: 5px 5px 12px var(--neu-dark), -5px -5px 12px var(--neu-light);
+}
+
+.neu-inset {
+  background: var(--neu-bg);
+  border-radius: 16px;
+  box-shadow: inset 5px 5px 10px var(--neu-dark), inset -5px -5px 10px var(--neu-light);
+}
+
+.neu-inset-sm {
+  background: var(--neu-bg);
+  border-radius: 12px;
+  box-shadow: inset 3px 3px 6px var(--neu-dark), inset -3px -3px 6px var(--neu-light);
+}
+
+.neu-btn {
+  background: var(--neu-bg);
+  border-radius: 16px;
+  box-shadow: 5px 5px 12px var(--neu-dark), -5px -5px 12px var(--neu-light);
+  transition: box-shadow 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+.neu-btn:hover:not(:disabled) {
+  box-shadow: 7px 7px 15px var(--neu-dark), -7px -7px 15px var(--neu-light);
+}
+.neu-btn:active:not(:disabled),
+.neu-btn.is-active {
+  box-shadow: inset 4px 4px 9px var(--neu-dark), inset -4px -4px 9px var(--neu-light);
+}
+.neu-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Accent (primary) button — soft indigo pill that still reads as neumorphic */
+.neu-primary {
+  background: linear-gradient(145deg, #6878ff, #5060ea);
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 6px 6px 14px var(--neu-dark), -6px -6px 14px var(--neu-light);
+  transition: box-shadow 0.2s ease, filter 0.2s ease;
+}
+.neu-primary:hover:not(:disabled) { filter: brightness(1.05); }
+.neu-primary:active:not(:disabled) {
+  box-shadow: inset 3px 3px 8px rgba(30, 40, 140, 0.45), inset -3px -3px 8px rgba(140, 155, 255, 0.5);
+}
+.neu-primary:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.neu-card {
+  background: var(--neu-bg);
+  border-radius: 20px;
+  box-shadow: 7px 7px 16px var(--neu-dark), -7px -7px 16px var(--neu-light);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.neu-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 10px 10px 22px var(--neu-dark), -10px -10px 22px var(--neu-light);
+}
+
+.neu-input {
+  background: var(--neu-bg);
+  border-radius: 16px;
+  border: none;
+  box-shadow: inset 4px 4px 9px var(--neu-dark), inset -4px -4px 9px var(--neu-light);
+  transition: box-shadow 0.2s ease;
+}
+.neu-input:focus {
+  outline: none;
+  box-shadow: inset 4px 4px 9px var(--neu-dark), inset -4px -4px 9px var(--neu-light), 0 0 0 2px rgba(91, 108, 249, 0.35);
+}
+
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+
+.custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background-color: #c5ccd8; border-radius: 20px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background-color: #a9b2c3; }
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-toast { animation: toast-in 0.25s ease-out; }

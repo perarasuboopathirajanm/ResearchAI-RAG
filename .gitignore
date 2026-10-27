@@ -1,0 +1,23 @@
+# Secrets - never commit your API keys
+.env
+*.env
+!.env.example
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Node / build
+node_modules/
+dist/
+
+# Local data (your uploaded papers and vector index)
+backend/chroma_db/
+backend/temp_uploads/
+
+# Local backups / OS files
+_original_backup/
+.DS_Store
+Thumbs.db
